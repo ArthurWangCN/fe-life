@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>时间/空间复杂度 | 前端知识总结</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <link rel="icon" href="/fe-life/favicon.ico">
+    <meta name="description" content="汇总前端知识点">
+    
+    <link rel="preload" href="/fe-life/assets/css/0.styles.dc91a417.css" as="style"><link rel="preload" href="/fe-life/assets/js/app.006c982a.js" as="script"><link rel="preload" href="/fe-life/assets/js/2.13686704.js" as="script"><link rel="preload" href="/fe-life/assets/js/9.e937fa01.js" as="script"><link rel="prefetch" href="/fe-life/assets/js/10.4716d5b4.js"><link rel="prefetch" href="/fe-life/assets/js/11.c6d75fa7.js"><link rel="prefetch" href="/fe-life/assets/js/12.b51805a3.js"><link rel="prefetch" href="/fe-life/assets/js/13.ef960e6c.js"><link rel="prefetch" href="/fe-life/assets/js/14.3bb9b2de.js"><link rel="prefetch" href="/fe-life/assets/js/15.cad4b3c0.js"><link rel="prefetch" href="/fe-life/assets/js/16.c9264f2c.js"><link rel="prefetch" href="/fe-life/assets/js/17.2faef5a8.js"><link rel="prefetch" href="/fe-life/assets/js/18.733e7306.js"><link rel="prefetch" href="/fe-life/assets/js/19.62d7b287.js"><link rel="prefetch" href="/fe-life/assets/js/20.2b4907f6.js"><link rel="prefetch" href="/fe-life/assets/js/21.5ba23daa.js"><link rel="prefetch" href="/fe-life/assets/js/22.5331761a.js"><link rel="prefetch" href="/fe-life/assets/js/23.caab7f40.js"><link rel="prefetch" href="/fe-life/assets/js/24.dd3756dc.js"><link rel="prefetch" href="/fe-life/assets/js/25.86cc69ac.js"><link rel="prefetch" href="/fe-life/assets/js/3.54f7104d.js"><link rel="prefetch" href="/fe-life/assets/js/4.dc321bd9.js"><link rel="prefetch" href="/fe-life/assets/js/5.391be865.js"><link rel="prefetch" href="/fe-life/assets/js/6.ad7e2c0f.js"><link rel="prefetch" href="/fe-life/assets/js/7.06e27650.js"><link rel="prefetch" href="/fe-life/assets/js/8.feeaf850.js">
+    <link rel="stylesheet" href="/fe-life/assets/css/0.styles.dc91a417.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/fe-life/" class="home-link router-link-active"><!----> <span class="site-name">前端知识总结</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/fe-life/html/" class="nav-link">
+  HTML/CSS
+</a></div><div class="nav-item"><a href="/fe-life/js/" class="nav-link">
+  JavaScript
+</a></div><div class="nav-item"><a href="/fe-life/vue/" class="nav-link">
+  Vue.js
+</a></div><div class="nav-item"><a href="/fe-life/ts/" class="nav-link">
+  TypeScript
+</a></div><div class="nav-item"><a href="/fe-life/engineering/" class="nav-link">
+  工程化
+</a></div><div class="nav-item"><a href="/fe-life/code/" class="nav-link">
+  代码题
+</a></div><div class="nav-item"><a href="/fe-life/exam/" class="nav-link">
+  自查题
+</a></div><div class="nav-item"><a href="/fe-life/handwrite/" class="nav-link">
+  手写题
+</a></div><div class="nav-item"><a href="/fe-life/algorithm/" class="nav-link router-link-active">
+  算法
+</a></div><div class="nav-item"><a href="/fe-life/composite/" class="nav-link">
+  综合题
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/fe-life/html/" class="nav-link">
+  HTML/CSS
+</a></div><div class="nav-item"><a href="/fe-life/js/" class="nav-link">
+  JavaScript
+</a></div><div class="nav-item"><a href="/fe-life/vue/" class="nav-link">
+  Vue.js
+</a></div><div class="nav-item"><a href="/fe-life/ts/" class="nav-link">
+  TypeScript
+</a></div><div class="nav-item"><a href="/fe-life/engineering/" class="nav-link">
+  工程化
+</a></div><div class="nav-item"><a href="/fe-life/code/" class="nav-link">
+  代码题
+</a></div><div class="nav-item"><a href="/fe-life/exam/" class="nav-link">
+  自查题
+</a></div><div class="nav-item"><a href="/fe-life/handwrite/" class="nav-link">
+  手写题
+</a></div><div class="nav-item"><a href="/fe-life/algorithm/" class="nav-link router-link-active">
+  算法
+</a></div><div class="nav-item"><a href="/fe-life/composite/" class="nav-link">
+  综合题
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span></span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/fe-life/algorithm/" aria-current="page" class="sidebar-link">算法基础</a></li><li><a href="/fe-life/algorithm/tree.html" class="sidebar-link">二叉树</a></li><li><a href="/fe-life/algorithm/complexity.html" aria-current="page" class="active sidebar-link">时间/空间复杂度</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/fe-life/algorithm/complexity.html#时间复杂度" class="sidebar-link">时间复杂度</a></li><li class="sidebar-sub-header"><a href="/fe-life/algorithm/complexity.html#空间复杂度" class="sidebar-link">空间复杂度</a></li><li class="sidebar-sub-header"><a href="/fe-life/algorithm/complexity.html#小结" class="sidebar-link">小结</a></li></ul></li><li><a href="/fe-life/algorithm/exercise.html" class="sidebar-link">真题练习</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="时间-空间复杂度"><a href="#时间-空间复杂度" class="header-anchor">#</a> 时间/空间复杂度</h1> <h2 id="时间复杂度"><a href="#时间复杂度" class="header-anchor">#</a> 时间复杂度</h2> <p>大家先来看这样一个问题：下面这段代码，一共会执行多少次？</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">function</span> <span class="token function">traverse</span><span class="token punctuation">(</span><span class="token parameter">arr</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> len <span class="token operator">=</span> arr<span class="token punctuation">.</span>length
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>len<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>首先，最没有悬念的是函数里的第一行代码，它只会被执行1次：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">var</span> len <span class="token operator">=</span> arr<span class="token punctuation">.</span>length
+</code></pre></div><p>其次没有悬念的是循环体：</p> <div class="language-js extra-class"><pre class="language-js"><code>console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>
+</code></pre></div><p>for循环跑了 n 次，因此这条语句就会被执行 n 次。</p> <p>循环体上面的几个部分我们拆开来看，首先是 i 的初始化语句：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span>
+</code></pre></div><p>初始化只有1次，因此它也只会被执行1次。</p> <p>接着是 i &lt; len 这个判断。这里有个规律大家可以记下：<strong>在所有的 for 循环里，判断语句都会比递增语句多执行一次</strong>。在这里，判断语句执行的次数就是 n+1。</p> <p>再往下就是递增语句 i++ 了，它跟随整个循环体，毫无疑问会被执行 n 次。</p> <p>假如把总的执行次数记为 T(n)，下面咱们就可以来做个简单的加法：</p> <div class="language-text extra-class"><pre class="language-text"><code>T(n) = 1 + n + 1 + (n+1) + n = 3n + 3
+</code></pre></div><p>接下来我们看看规模为 n*n 的二维数组的遍历，一共需要执行多少次代码：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">function</span> <span class="token function">traverse</span><span class="token punctuation">(</span><span class="token parameter">arr</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> outLen <span class="token operator">=</span> arr<span class="token punctuation">.</span>length
+
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>outLen<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">var</span> inLen <span class="token operator">=</span> arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>length
+
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> j<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>j<span class="token operator">&lt;</span>inLen<span class="token punctuation">;</span>j<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+            console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>首先仍然是没有悬念的第一行代码，它只会被执行一次：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">var</span> outLen <span class="token operator">=</span> arr<span class="token punctuation">.</span>length
+</code></pre></div><p>接下来我们来看最内层的循环体：</p> <div class="language-js extra-class"><pre class="language-js"><code>console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span>
+</code></pre></div><p>因为咱们是两层循环，所以这会被执行 <code>n*n = n^2</code> 次。</p> <p>其它语句的计算思路和咱们第一个🌰区别不大，不再赘述。继续来做个求总执行次数 T(n) 的加法看看：</p> <div class="language-text extra-class"><pre class="language-text"><code>T(n) = 1 + 1 + (n+1) + n + n + n + n*(n+1) + n*n + n*n = 3n^2 + 5n + 3
+</code></pre></div><p>代码的执行次数，可以反映出代码的执行时间。但是如果每次我们都逐行去计算 <code>T(n)</code>，事情会变得非常麻烦。算法的时间复杂度，它反映的不是算法的逻辑代码到底被执行了多少次，而是随着输入规模的增大，算法对应的执行总次数的一个变化趋势。要想反映趋势，那就简单多了，直接抓主要矛盾就行。我们可以尝试对 T(n) 做如下处理：</p> <ul><li>若 <code>T(n)</code> 是常数，那么无脑简化为1</li> <li>若 <code>T(n)</code> 是多项式，比如 <code>3n^2 + 5n + 3</code>，我们只保留次数最高那一项，并且将其常数系数无脑改为1。</li></ul> <p>经过这么一波操作，T(n) 就被简化为了 O(n)：</p> <div class="language-text extra-class"><pre class="language-text"><code>T(n) = 10  
+O(n) = 1
+T(n) = 3n^2 + 5n + 3
+O(n) = n^2
+</code></pre></div><p>到这里，我们思路仍然是 <code>计算T(n) -&gt; 推导O(n)</code>。这么讲是为了方便大家理解 O(n) 的简化过程，实际操作中，O(n) 基本可以目测，比如咱们上面的两个遍历函数：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">function</span> <span class="token function">traverse1</span><span class="token punctuation">(</span><span class="token parameter">arr</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> len <span class="token operator">=</span> arr<span class="token punctuation">.</span>length
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>len<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">traverse2</span><span class="token punctuation">(</span><span class="token parameter">arr</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> outLen <span class="token operator">=</span> arr<span class="token punctuation">.</span>length
+
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>outLen<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">var</span> inLen <span class="token operator">=</span> arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>length
+
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> j<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>j<span class="token operator">&lt;</span>inLen<span class="token punctuation">;</span>j<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+            console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>遍历 N 维数组，需要 N 层循环，我们只需要关心其最内层那个循环体被执行多少次就行了。</p> <p>我们可以看出，规模为 n 的一维数组遍历时，最内层的循环会执行 n 次，其对应的时间复杂度是 <code>O(n)</code>；规模为 <code>n*n</code> 的二维数组遍历时，最内层的循环会执行 <code>n*n</code> 次，其对应的时间复杂度是 <code>O(n^2)</code>。</p> <p>以此类推，规模为 <code>n*m</code> 的二维数组最内层循环会执行 <code>n*m</code> 次，其对应的时间复杂度就是<code>O(n*m)</code>；规模为 <code>n*n*n</code> 的三维数组最内层循环会执行 n^3 次，因此其对应的时间复杂度就表示为 <code>O(n^3)</code>。</p> <p>常见的时间复杂度表达，除了多项式以外，还有<code>logn</code>。我们一起来看另一个算法：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">function</span> <span class="token function">fn</span><span class="token punctuation">(</span><span class="token parameter">arr</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> len <span class="token operator">=</span> arr<span class="token punctuation">.</span>length  
+    
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> i<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>len<span class="token punctuation">;</span>i<span class="token operator">=</span>i<span class="token operator">*</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>这个算法读取一个一维数组作为入参，然后对其中的元素进行跳跃式的输出。这个跳跃的规则，就是数组下标从1开始，每次会乘以二。</p> <p>如何计算这个函数的时间复杂度呢？在有循环的地方，我们关心的永远是最内层的循环体。这个算法中，我们关心的就是 <code>console.log(arr[i])</code> 到底被执行了几次，换句话说，也就是要知道 <code>i&lt;n（ len === n）</code> 这个条件是在 i 递增多少次后才不成立的。</p> <p>假设 i 在以 <code>i=i*2</code>的规则递增了 <code>x</code> 次之后，<code>i&lt;n</code> 开始不成立（反过来说也就是 <code>i&gt;=n</code> 成立）。那么此时我们要计算的其实就是这样一个数学方程：</p> <div class="language-text extra-class"><pre class="language-text"><code>2^x &gt;= n
+</code></pre></div><p><code>x</code> 解出来，就是要大于等于以 <code>2</code> 为底数的 <code>n</code> 的对数。</p> <p>也就是说，只有当 x 小于 log2n 的时候，循环才是成立的、循环体才能执行。注意涉及到对数的时间复杂度，底数和系数都是要被简化掉的。那么这里的 O(n) 就可以表示为：</p> <div class="language-text extra-class"><pre class="language-text"><code>O(n) = logn
+</code></pre></div><p>没错，这时的主要矛盾，就变成了一个对数表达式。</p> <p>关于常见的时间复杂度，我们会在后面讲到具体知识点（尤其是排序算法）时，结合实例来给大家做分析。这里大家首先要认识一下常见时间复杂度有哪些，并且对这些常见时间复杂度之间的大小关系做个把握。</p> <p>常见的时间复杂度按照从小到大的顺序排列，有以下几种：</p> <p><img src="https://raw.githubusercontent.com/ArthurWangCN/PictureBed/main/20210905111527.png" alt=""></p> <h2 id="空间复杂度"><a href="#空间复杂度" class="header-anchor">#</a> 空间复杂度</h2> <p>空间复杂度是对一个算法在运行过程中临时占用存储空间大小的量度。和时间复杂度相似，它是内存增长的趋势。</p> <p>常见的空间复杂度有 <code>O(1)</code>、<code>O(n)</code> 和 <code>O(n^2)</code>。</p> <p>理解空间复杂度，我们照样来看一个🌰：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">function</span> <span class="token function">traverse</span><span class="token punctuation">(</span><span class="token parameter">arr</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> len <span class="token operator">=</span> arr<span class="token punctuation">.</span>length
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>len<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>在 traverse 中，占用空间的有以下变量：</p> <div class="language-text extra-class"><pre class="language-text"><code>arr    
+len   
+i    
+</code></pre></div><p>后面尽管咱们做了很多次循环，但是这些都是时间上的开销。循环体在执行时，并没有开辟新的内存空间。因此，整个 traverse 函数对内存的占用量是恒定的，它对应的空间复杂度就是 O(1)。</p> <p>下面我们来看另一个🌰，此时我想要初始化一个规模为 n 的数组，并且要求这个数组的每个元素的值与其索引始终是相等关系，我可以这样写：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">function</span> <span class="token function">init</span><span class="token punctuation">(</span><span class="token parameter">n</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>n<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> i
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> arr
+<span class="token punctuation">}</span>
+</code></pre></div><p>在这个 init 中，涉及到的占用内存的变量有以下几个：</p> <div class="language-text extra-class"><pre class="language-text"><code>n 
+arr
+i
+</code></pre></div><p>注意这里这个 arr，它并不是一个一成不变的数组。arr最终的大小是由输入的 n 的大小决定的，它会随着 n 的增大而增大、呈一个线性关系。因此这个算法的空间复杂度就是 O(n)。</p> <h2 id="小结"><a href="#小结" class="header-anchor">#</a> 小结</h2> <p>结束了本节的学习，相信各位对时间复杂度和空间复杂度都有了一个感性的认知和初步的了解。在后续的学习中，我们会在必要的时候继续为大家提点真题中的时间复杂度和空间复杂度，带领大家在实战中强化对理论概念的认知。</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/fe-life/algorithm/tree.html" class="prev">
+        二叉树
+      </a></span> <span class="next"><a href="/fe-life/algorithm/exercise.html">
+        真题练习
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/fe-life/assets/js/app.006c982a.js" defer></script><script src="/fe-life/assets/js/2.13686704.js" defer></script><script src="/fe-life/assets/js/9.e937fa01.js" defer></script>
+  </body>
+</html>
